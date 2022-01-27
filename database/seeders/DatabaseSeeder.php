@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         User::factory(2)
             ->has(Workspace::factory()
                     ->count(2)
-                    ->hasTasks(3))
+                    ->hasTasks(2))
             ->create();
     }
 }

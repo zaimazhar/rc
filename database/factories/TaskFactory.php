@@ -27,8 +27,12 @@ class TaskFactory extends Factory
     public function configure()
     {
         return $this->afterMaking(function (Task $task) {
-            if ($task->deadline_at > Carbon::today('Asia/Kuala_Lumpur')) {
+            if ($task->deadline_at < Carbon::today('Asia/Kuala_Lumpur')) {
+                $task->status = 'completed';
                 $task->completed_at = Carbon::today('Asia/Kuala_Lumpur');
+            } else {
+                $task->status = 'incomplete';
+                $task->completed_at = null;
             }
         });
     }

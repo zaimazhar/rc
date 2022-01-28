@@ -17,6 +17,7 @@ class CreateWorkspacesTable extends Migration
     {
         Schema::create('workspaces', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->timestamps();
             $table->foreignIdFor(User::class);
         });

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\WorkspaceController;
+use App\Models\Task;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,7 +31,12 @@ Route::controller(WorkspaceController::class)->group(function () {
     Route::get('workspace/{wid}', 'ListTask')->name('list_task');
 
     // POST Routes
+});
 
+Route::controller(TaskController::class)->group(function () {
+    
+    // POST Routes
+    Route::post('task/create', 'create')->name('create_task');
 });
 
 require __DIR__.'/auth.php';

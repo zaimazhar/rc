@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="text-right mr-1 mb-2">
-                <button class="text-white px-2 rounded-md text-3xl bg-slate-500 shadow-lg">&#43;</button>
+                <button onclick="toggleModal()" class="text-white px-2 rounded-md text-3xl bg-slate-500 shadow-lg">&#43;</button>
             </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
@@ -26,4 +26,6 @@
             </div>
         </div>
     </div>
+
+    <x-modal></x-modal>
 </x-app-layout>
